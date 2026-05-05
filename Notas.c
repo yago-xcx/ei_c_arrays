@@ -1,4 +1,3 @@
-# ei_c_arrays
 #include <stdio.h>
 
 int id[10] = { 101, 102, 103, 104, 105, 106, 107, 108, 109, 110};
@@ -26,7 +25,23 @@ int main(){
         }
     } 
 
-    
+    for( int i = 0; i < activos-1;i++  ){
+        posMax = i;
+        for (int j = i+1; j < activos; j++){
+            if(notas[j] > notas[posMax]){
+                posMax = j;
+                else if nota[j] == notas[posMax] && id[j] < id[posMax]){
+                    posMax = j;
+                }
+            }
+        }
+    }
+    tempnotas = notas[i];
+    notas[i] = notas[posMax];
+    notas[posMax] = tempnotas;
+    tempid = id[i];
+    id[i] = id[posMax];
+    id[posMax] = tempid;
 
     for( int i = 0; i  <10; i++){
         printf("indice i: %d; id: %d; notas: %0.2lf  \n", i, id[i], notas[i]);
@@ -34,4 +49,4 @@ int main(){
     
     
 }
-
+    
